@@ -12,7 +12,7 @@ The Chronic Kidney Disease is the 11th most common cause of death globally, acco
 
 ## Install packages
 
-To install the required packages (in a virtual environnement), open a command line terminal in the folder `StochasticKep` and run the following commands in Julia's REPL.
+To install the required packages (in a virtual environnement), open a command line terminal in the folder `StochasticKEP` and run the following commands in Julia's REPL.
 ```julia
 julia> ]
 (@v1.4) pkg> activate .
@@ -26,24 +26,24 @@ Data files are located in the `StochasticKEP/data` folder. They come from the [P
 
 ## Example scripts
 
-The following commands can be run from the `StochasticKep` folder.
+The following commands can be run from the `StochasticKEP` folder.
 
-##### Allowed command-line arguments values
+### Allowed command-line arguments values
 
-* `instance` : relative path of the data set from `StochasticKep/data` folder
+* `instance` : relative path of the data set from `StochasticKEP/data` folder
 * `formulation` : `matching`, `relaxed_arc`
 * `generation` : `Constant`, `Binomial`, `BinomialUNOS`, `BinomialAPD`, `NoFailure`
 * `scenarios` : Positive `Int`
 * `eval-scenarios` : Positive `Int`
 
-##### Collect information about a dataset
+### Collect information about a dataset
 Print the graph size for the matching and the relaxed-arc formulation with the corresponding number of variables in the models.
 ```bash
 $ julia --project=. example/instance.jl <instance> <scenarios>
 $ # Example : julia --project=. example/instance.jl preflib-md/MD-00001-00000001 100
 ```
 
-##### Perform a scenario sensibility analysis
+### Perform a scenario sensibility analysis
 For different numbers of scenarios in a given formulation, plot the real cost, the perceived cost and the solution time.
 ```bash
 $ julia --project=. example/scenarios.jl <instance> <formulation> <generation> <budget> <min-scenario> <max-scenario> <step-scenario> <eval-scenarios> <repeats> [<maxtime>]
@@ -51,7 +51,7 @@ $ # Example : julia --project=. example/scenarios.jl preflib-md/MD-00001-0000000
 ```
 Results are stored in `example/saves/scenario.png`.
 
-##### Perform a budget sensibility analysis
+### Perform a budget sensibility analysis
 For different HLA-crossmatch test budgets in a given formulation, plot the real cost, the perceived cost, the EEV, the WS and the solution time.
 ```bash
 $ julia --project=. example/budget.jl <instance> <formulation> <generation> <min-budget> <max-budget> <step-budget> <scenarios> <eval-scenarios> [<maxtime>]
