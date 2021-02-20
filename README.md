@@ -1,6 +1,6 @@
 # Stochastic KEP
 
-Code that is linked to the technical report.
+Code that is linked to the **[technical report](Stochastic_KEP.pdf)**.
 
 ## General informations
 
