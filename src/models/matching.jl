@@ -26,8 +26,8 @@ function matching_deterministic(pool::MetaDiGraph, scenario::Scenario, B::Real;
     E = ne(matching_pool)
     weights = [get_prop(matching_pool, edge, :weight) for edge in edges(matching_pool)]
 
-    model = Model(optimizer_with_attributes(Gurobi.Optimizer, 
-        "TimeLimit" => maxtime, "OutputFlag" => 0))
+    model = Model(optimizer_with_attributes(GLPK.Optimizer, 
+        "tm_lim" => round(1000*maxtime), "msg_lev" => GLPK.GLP_MSG_OFF))
 
     # Variables : 
     #   y_e = 1 if the transplant e is carried out
@@ -98,8 +98,8 @@ function matching_stochastic(pool::MetaDiGraph, scenarios::Array{Scenario,1},
 
     ne(matching_pool) > 0 || throw(ArgumentError("Matching graph obtained from the pool has no edges."))
 
-    model = Model(optimizer_with_attributes(Gurobi.Optimizer, 
-        "TimeLimit" => maxtime, "OutputFlag" => 0))
+    model = Model(optimizer_with_attributes(GLPK.Optimizer, 
+        "tm_lim" => round(1000*maxtime), "msg_lev" => GLPK.GLP_MSG_OFF))
 
     K = length(scenarios)
     V = nv(matching_pool)

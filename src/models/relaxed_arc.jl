@@ -21,8 +21,8 @@ function relaxed_arc_deterministic(pool::MetaDiGraph, scenario::Scenario, B::Rea
     A = ne(pool)
     weights = [get_prop(pool, arc, :weight) for arc in edges(pool)]
 
-    model = Model(optimizer_with_attributes(Gurobi.Optimizer, 
-        "TimeLimit" => maxtime, "OutputFlag" => 0))
+    model = Model(optimizer_with_attributes(GLPK.Optimizer, 
+        "tm_lim" => round(1000*maxtime), "msg_lev" => GLPK.GLP_MSG_OFF))
 
     # Variables : 
     #   x_a = 1 if the transplant a is carried out
@@ -94,8 +94,8 @@ function relaxed_arc_stochastic(pool::MetaDiGraph, scenarios::Array{Scenario,1},
 
     assert_pool_scenarios_compatibility(pool, scenarios)
 
-    model = Model(optimizer_with_attributes(Gurobi.Optimizer, 
-        "TimeLimit" => maxtime, "OutputFlag" => 0))
+    model = Model(optimizer_with_attributes(GLPK.Optimizer, 
+        "tm_lim" => round(1000*maxtime), "msg_lev" => GLPK.GLP_MSG_OFF))
 
     K = length(scenarios)
     V = nv(pool)

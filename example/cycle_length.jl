@@ -7,19 +7,6 @@ using .StochasticKep
 
 data_folder = joinpath(join(split(@__DIR__, "/")[1:(end-1)], "/"), "data")
 
-instances = [
-    "preflib-md/MD-00001-00000001",
-    "preflib-md/MD-00001-00000003",
-    "preflib-md/MD-00001-00000005",
-    "preflib-md/MD-00001-00000007",
-    "preflib-md/MD-00001-00000009",
-    "preflib-md/MD-00001-00000011",
-    "preflib-md/MD-00001-00000013",
-    #"preflib-md/MD-00001-00000015",
-    #"preflib-md/MD-00001-00000017",
-    #"preflib-md/MD-00001-00000019",
-]
-
 formulation = "relaxed_arc"
 generation = "BinomialUNOS"
 

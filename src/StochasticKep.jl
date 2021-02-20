@@ -3,7 +3,7 @@ module StochasticKep
 
 using DelimitedFiles
 using Distributions
-using Gurobi
+using GLPK
 using JuMP
 using LightGraphs
 using MetaGraphs
@@ -15,6 +15,7 @@ export
     # ----- Instance ----- #
 
     kep_pool,
+    extract_matching_pool,
     Scenario,
     sample_scenarios,
     expected_scenario,
@@ -26,15 +27,7 @@ export
     WS,
     EVP,
     decision_evaluation,
-    find_cycles,
-
-    # ----- Only used in tests ----- #
-    
-    extract_matching_pool,
-    extract_matching_scenario,
-    extract_matching_scenarios,
-    num_edge_with_extremity,
-    matching_budget
+    find_cycles
 
 include("instance/instance.jl")
 include("models/models.jl")
