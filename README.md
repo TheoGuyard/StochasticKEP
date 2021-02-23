@@ -8,7 +8,7 @@ The Chronic Kidney Disease is the 11th most common cause of death globally, acco
 ## General informations
 
 * Language : `Julia v1.4`
-* Dependencies : `ArgParse`, `Cairo`, `Compose`,  `CSV`, `DataFrames`, `DelimitedFiles`, `Distributions`, `Fontconfig`, `GraphPlot`, `Gurobi`, `JLD2`, `JuMP`, `LightGraphs`, `MetaGraphs`, `Plots`, `PyPlot` 
+* Dependencies : `ArgParse`, `DataFrames`, `Distributions`, `GLPK`, `JuMP`, `LightGraphs`, `MetaGraphs`, `Plots`
 
 ## Install packages
 
