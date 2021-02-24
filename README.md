@@ -22,7 +22,7 @@ Models are solved using `GLPK`.
 
 ## Data files
 
-Data files are located in the `StochasticKEP/data` folder. They come from the [PrefLib](https://www.preflib.org) library. In this repository, only one dataset in included. Additional datasets can be downloaded from [here](https://www.preflib.org/data/matching/kidney/) and added manually in the data folder.
+Data files are located in the `StochasticKEP/data` folder. They come from the [PrefLib](https://www.preflib.org) library. In this repository, only one dataset in included. Additional datasets can be downloaded [here](https://www.preflib.org/data/matching/kidney/) and added manually in the `data folder.
 
 ## Example scripts
 
